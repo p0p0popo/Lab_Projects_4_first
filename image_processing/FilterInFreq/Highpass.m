@@ -1,0 +1,13 @@
+[x,y] = meshgrid(-128:127,-128:127);
+duv = sqrt(x.^2+y.^2);
+c = duv > 50;
+a = imread('cameraman.tif');
+aFreq = fftshift(fft2(a));
+hp = aFreq.*c;
+fftshow(aFreq);
+figure, fftshow(hp);
+% aFreqi = ifft2(aFreq);
+hpi = ifft2(hp);
+figure, ifftshow(hpi);
+% ifftshow(aFreqi);
+figure, imshow(a);

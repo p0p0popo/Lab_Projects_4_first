@@ -1,0 +1,13 @@
+a = imread('cameraman.tif');
+hp = butterhp(a,15,1);
+aFreq = fftshift(fft2(a));
+aFreqHp = aFreq.*hp;
+fftshow(aFreqHp);
+aFreqHpi = ifft2(aFreqHp);
+ifftshow(aFreqHpi);
+hp = butterhp(a,15,2);
+aFreq = fftshift(fft2(a));
+aFreqHp = aFreq.*hp;
+fftshow(aFreqHp);
+aFreqHpi = ifft2(aFreqHp);
+ifftshow(aFreqHpi);
